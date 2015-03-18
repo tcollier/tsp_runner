@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+require 'tsp_runner'
+
+filename = File.join(File.dirname(__FILE__), '..', 'data', 'input', 'sample_10.csv')
+
+begin
+  runner = TspRunner::Runner.new(ARGV.join(' '), filename)
+  runner.run(5)
+  distance = runner.validate!('San Francisco')
+  $stdout.puts("Success: #{distance} km")
+rescue TspRunner::Runner::BaseError => error
+  $stderr.puts error.message
+  exit(1)
+end
