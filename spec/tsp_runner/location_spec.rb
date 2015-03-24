@@ -8,6 +8,7 @@ module TspRunner
       let(:nearby)   { Location.new('Nearby', 46.36253, 15.1144438) }
       let(:middle)   { Location.new('Middle', 46.055556, 14.508333) }
       let(:faraway)  { Location.new('Farwawy', -37.7833083, -122.416749) }
+      let(:other)    { [same_lat, same_lon, nearby, middle, faraway].sample }
 
       it 'calculates the distance from itself to be 0' do
         expect(subject.distance_from(subject)).to eq(0)
@@ -44,8 +45,8 @@ module TspRunner
       end
 
       it 'obeys the symmetric property' do
-        expect(subject.distance_from(middle))
-          .to be_within(0.000001).of(middle.distance_from(subject))
+        expect(subject.distance_from(other))
+          .to be_within(0.000001).of(other.distance_from(subject))
       end
     end
   end

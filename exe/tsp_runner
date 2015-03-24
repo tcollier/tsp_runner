@@ -2,5 +2,4 @@
 require 'bundler/setup'
 require 'tsp_runner'
 
-runner = TspRunner::Runner.new(ARGV[0], ARGV[1], *ARGV[2..-1])
-runner.run
+TspRunner::Runner.new(ARGV[0], ARGV[1], *ARGV[2..-1]).run
