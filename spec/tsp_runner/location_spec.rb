@@ -15,31 +15,31 @@ module TspRunner
       end
 
       it 'calculates locations with the same latitude' do
-        expected_distance = 162705.77332198387
+        expected_distance = 162705.773321
         expect(subject.distance_from(same_lat))
           .to be_within(0.000001).of(expected_distance)
       end
 
       it 'calculates locations with the same longitude' do
-        expected_distance = 2776260.442947286
+        expected_distance = 2776260.442947
         expect(subject.distance_from(same_lon))
           .to be_within(0.000001).of(expected_distance)
       end
 
       it 'calculates nearby locations' do
-        expected_distance = 3.3358831024098943
+        expected_distance = 3.335883
         expect(subject.distance_from(nearby))
           .to be_within(0.000001).of(expected_distance)
       end
 
       it 'calculates not too close, but not too far distances' do
-        expected_distance = 57794.35510874037
+        expected_distance = 57794.355108
         expect(subject.distance_from(middle))
           .to be_within(0.000001).of(expected_distance)
       end
 
       it 'calculates faraway locations' do
-        expected_distance = 16428971.274199924
+        expected_distance = 16428971.274199
         expect(subject.distance_from(faraway))
           .to be_within(0.000001).of(expected_distance)
       end

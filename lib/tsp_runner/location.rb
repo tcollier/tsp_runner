@@ -33,7 +33,7 @@ module TspRunner
     # Gleefully stolen from:
     # http://stackoverflow.com/questions/12966638/how-to-calculate-the-distance-between-two-gps-coordinates-without-using-google-m
     #
-    # @return [Fixnum] the Haversine distance of the location (from self) as
+    # @return [Fixnum] the haversine distance of the location (from self) as
     #   measured in meters
     def distance_from(location)
       delta_lat = location.lat_rad - lat_rad
